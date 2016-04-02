@@ -35,7 +35,7 @@ for i in range(7):
 		for b in range(1, a+1):
 			if [a, b] in crossedout:
 				continue
-			onlyPossibilityAddition = True
+			
 			onlyPossibilityMultiplication = True
 			for c in range(1, 10):
 				for d in range(1, c+1):
@@ -50,7 +50,11 @@ for i in range(7):
 			
 			if onlyPossibilityMultiplication:
 				newcrossedout.append([a, b])
-			
+	crossedout += newcrossedout
+	newcrossedout = []
+	for a in range(1, 10):
+		for b in range(1, a+1):
+			onlyPossibilityAddition = True
 			for c in range(1, 10):
 				for d in range(1, c+1):
 					if c == a and d == b:
@@ -61,9 +65,9 @@ for i in range(7):
 						continue
 					if c + d == a + b:
 						onlyPossibilityAddition = False
-			
+						
 			if onlyPossibilityAddition:
 				newcrossedout.append([a, b])
 				
-		
+	print newcrossedout
 	crossedout += newcrossedout
