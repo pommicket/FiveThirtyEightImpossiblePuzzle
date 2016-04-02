@@ -6,10 +6,8 @@ except:
         from PIL import Image
         from PIL import ImageDraw
         from PIL import ImageFont
-try:
-    font = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeMono.ttf', 20)
-except:
-    font = ImageFont.truetype(r'C:\Windows\Fonts\consola.ttf', 20)
+
+font = ImageFont.truetype('FreeMono.ttf', 20)
 crossedout = []
 def createGrid(name):
 	img = Image.new('RGB', (900, 900), '#fff')
