@@ -45,12 +45,25 @@ for i in range(7):
 						continue
 					if [c, d] in crossedout:
 						continue
-					if c + d == a + b:
-						onlyPossibilityAddition = False
 					if c * d == a * b:
 						onlyPossibilityMultiplication = False
 			
-			if onlyPossibilityAddition or onlyPossibilityMultiplication:
+			if onlyPossibilityMultiplication:
 				newcrossedout.append([a, b])
-
+			
+			for c in range(1, 10):
+				for d in range(1, c+1):
+					if c == a and d == b:
+						continue
+					if d == a and c == b:
+						continue
+					if [c, d] in crossedout:
+						continue
+					if c + d == a + b:
+						onlyPossibilityAddition = False
+			
+			if onlyPossibilityAddition:
+				newcrossedout.append([a, b])
+				
+		
 	crossedout += newcrossedout
